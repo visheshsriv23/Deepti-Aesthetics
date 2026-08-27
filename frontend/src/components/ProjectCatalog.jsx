@@ -1,4 +1,6 @@
 import React from "react";
+import product1 from "../products/p1.jpg";
+import product2 from "../products/p2.jpg";
 
 const PROJECTS = [
   {
@@ -6,7 +8,7 @@ const PROJECTS = [
     title: "Pink Tiger Peeking Keycover",
     category: "CROCHET KEYCOVERS",
     desc: "Hand-knit soft yarn keyholder to keep your keys cozy, safe, and easy to find in your bag.",
-    image: "/products/p1.jpg",
+    image: {product1},
     fallback: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&auto=format&fit=crop&q=80",
   },
   {
@@ -14,7 +16,7 @@ const PROJECTS = [
     title: "Watermelon Slice Crochet Coaster",
     category: "HOME & TABLEWARE",
     desc: "Bright, multi-layered cotton coaster handcrafted to add a slice of fruity fun to your desk or table.",
-    image: "/products/p2.jpg",
+    image: {product2},
     fallback: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&auto=format&fit=crop&q=80",
   },
   {

@@ -1,4 +1,5 @@
 import React from "react";
+import hero from "../products/hero.jpg";
 
 export default function Hero() {
   return (
@@ -7,7 +8,7 @@ export default function Hero() {
         {/* Large Editorial Feature Image */}
         <div className="lg:col-span-8 overflow-hidden rounded-sm border border-theme-border aspect-[12/10] bg-[#EBE5DC]">
           <img
-            src="/products/hero.jpg"
+            src={hero}
             alt="Deepti Aesthetics Gallery"
             onError={(e) => {
               e.currentTarget.src = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop&q=80";
