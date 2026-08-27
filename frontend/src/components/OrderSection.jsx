@@ -8,6 +8,7 @@ const PRODUCTS_LIST = [
   { id: "art-104", title: "Minimalist Sculptural Table Decor", price: 1950 },
   { id: "art-105", title: "Custom Editorial Invitation Suite (50 Units)", price: 4800 },
 ];
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://deepti-backend.onrender.com";
 
 export default function OrderSection() {
   const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ export default function OrderSection() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/orders", {
+        const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

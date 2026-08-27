@@ -10,6 +10,7 @@ export default function AdminVishesh() {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "https://deepti-backend.onrender.com";
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ export default function AdminVishesh() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/admin/login", {
+        const res = await fetch(`${API_BASE_URL}/api/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
@@ -40,7 +41,7 @@ export default function AdminVishesh() {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/admin/orders", {
+        const res = await fetch(`${API_BASE_URL}/api/admin/orders`, {
         headers: { Authorization: `Bearer ${auth.token}` },
       });
       const data = await res.json();
