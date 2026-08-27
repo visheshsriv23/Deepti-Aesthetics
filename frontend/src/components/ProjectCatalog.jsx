@@ -1,6 +1,6 @@
 import React from "react";
-import product1 from "../products/p1.jpg";
-import product2 from "../products/p2.jpg";
+import product1 from "../../products/p1.jpg";
+import product2 from "../../products/p2.jpg";
 
 const PROJECTS = [
   {
