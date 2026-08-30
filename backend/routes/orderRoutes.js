@@ -76,4 +76,27 @@ router.get("/admin/orders", verifyAdminToken, async (req, res) => {
   }
 });
 
+router.patch("/admin/orders/:id/status", verifyAdminToken, async (req, res) => {
+  try {
+    const { status } = req.body;
+    if (!["Pending", "Processing", "Completed"].includes(status)) {
+      return res.status(400).json({ error: "Invalid status value." });
+    }
+
+    const updatedOrder = await Order.findByIdAndUpdate(
+      req.params.id,
+      { status },
+      { new: true }
+    );
+
+    if (!updatedOrder) {
+      return res.status(404).json({ error: "Order not found." });
+    }
+
+    return res.json({ success: true, order: updatedOrder });
+  } catch (err) {
+    return res.status(500).json({ error: "Failed to update order status." });
+  }
+});
+
 export default router;
