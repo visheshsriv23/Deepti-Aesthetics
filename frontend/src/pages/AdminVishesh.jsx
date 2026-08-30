@@ -146,7 +146,7 @@ export default function AdminVishesh() {
                 type="email"
                 required
                 value={credentials.email}
-                placeholder="tanishkasrivastava57@gmail.com"
+                placeholder="abc@gmail.com"
                 onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
                 className="w-full px-4 py-3 bg-[#FAF8F5] border border-theme-border text-xs sm:text-sm focus:outline-none focus:border-theme-dark font-sans"
               />
